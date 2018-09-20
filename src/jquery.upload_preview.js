@@ -24,6 +24,7 @@
             borderRadius: '5px',
             border: '0',
             lang: 'zh-cn',
+            defaultLabel: '<span>click here to choose pic</span><div class="up_again">click again<br>choose pic</div>',
         };
         this.options = $.extend({}, this.defaults, opt);
     };
@@ -45,6 +46,7 @@
                 borderRadius: this.options.borderRadius,
                 border: this.options.border,
                 lang: this.options.lang,
+                defaultLabel: this.options.defaultLabel,
             }); //设置CSS
             _imgPreview(this.$element, this.$element.children('input'));
             return this.$element;
@@ -64,7 +66,7 @@
                 param.$element.append('<span>click to choose a pic</span><div class="up_again">click again<br>to choose another</div>');
                 break;
             default:
-                param.$element.append('<span>click here to choose pic</span><div class="up_again">click again<br>choose pic</div>');
+                param.$element.append(param.defaultLabel);
 
         }
 
